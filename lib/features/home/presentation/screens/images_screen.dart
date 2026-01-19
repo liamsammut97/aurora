@@ -23,7 +23,12 @@ class ImagesScreen extends ConsumerWidget {
             );
           }
 
-          return AnimatedImageContainer(imageData: data);
+          return AnimatedImageContainer(
+            imageData: data,
+            onTap: () {
+              ref.invalidate(imagesControllerProvider);
+            },
+          );
         },
         error:
             (error, stack) => Center(
